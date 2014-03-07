@@ -6,10 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.json.JSONObject;
+
 public class DBUtil {
 
 	private static final String DRIVE_PATH="com.mysql.jdbc.Driver"; 
-	private static final String URL="jdbc:mysql://127.0.0.1:3306/mysql";
+	private static final String URL="jdbc:mysql://127.0.0.1:3306/NewBalance";
 	private static final String USER="root";
 	private static final String PASSWORD="";
 	

@@ -4,4 +4,52 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  
+  
+  <servlet>
+	<servlet-name>SignInServlet</servlet-name>
+	<servlet-class>com.newbalance.rickie.servlets.SignInServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignInServlet</servlet-name>
+    <url-pattern>/servlet/SignInServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>LogInServlet</servlet-name>
+	<servlet-class>com.newbalance.rickie.servlets.LogInServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogInServlet</servlet-name>
+    <url-pattern>/servlet/LogInServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>ModifyUserBasicInfoServlet</servlet-name>
+	<servlet-class>com.newbalance.rickie.servlets.ModifyUserBasicInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModifyUserBasicInfoServlet</servlet-name>
+    <url-pattern>/servlet/ModifyUserBasicInfoServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>GetSecuQuestionServlet</servlet-name>
+	<servlet-class>com.newbalance.rickie.servlets.GetSecuQuestionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetSecuQuestionServlet</servlet-name>
+    <url-pattern>/servlet/GetSecuQuestionServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>FindPasswordServlet</servlet-name>
+	<servlet-class>com.newbalance.rickie.servlets.FindPasswordServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindPasswordServlet</servlet-name>
+    <url-pattern>/servlet/FindPasswordServlet</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>
