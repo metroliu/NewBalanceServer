@@ -22,5 +22,23 @@ public class FollowerModuleServiceImp implements FollowerModuleService {
 		}
 		
 	}
+	
+	
+	
+	
+	public void cancelFollow( int user_id, int follower_id ){
+		
+		try{
+			
+			FollowerModuleDao dao = new FollowerModuleDaoImp();
+			dao.cancelFollowByUserId(user_id, follower_id);
+			
+		} catch( SQLException e ){
+			
+			throw new RuntimeException( Macro.CODE_SYSERROE );
+			
+		}
+		
+	}
 
 }

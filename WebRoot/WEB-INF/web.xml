@@ -51,5 +51,32 @@
     <url-pattern>/servlet/FindPasswordServlet</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+	<servlet-name>FollowServlet</servlet-name>
+	<servlet-class>com.newbalance.rickie.servlets.FollowServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FollowServlet</servlet-name>
+    <url-pattern>/servlet/FollowServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>CancelFollowServlet</servlet-name>
+	<servlet-class>com.newbalance.rickie.servlets.CancelFollowServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CancelFollowServlet</servlet-name>
+    <url-pattern>/servlet/CancelFollowServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>GetFollowerNumServlet</servlet-name>
+	<servlet-class>com.newbalance.rickie.servlets.GetFollowerNumServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetFollowerNumServlet</servlet-name>
+    <url-pattern>/servlet/GetFollowerNumServlet</url-pattern>
+  </servlet-mapping>
+  
   
 </web-app>
