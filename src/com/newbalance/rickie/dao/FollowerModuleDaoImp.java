@@ -174,7 +174,100 @@ public class FollowerModuleDaoImp implements FollowerModuleDao {
 			return fansList;
 			
 		}
+	}
+	
+	
+	
+	
+	
+	
+	public UserVO getUserInfoById(int user_id) throws SQLException{
 		
+		Connection connection = DBUtil.getConnection(true);
+		UserVO userVO = new UserVO();
+		
+		try{
+			
+			String sql = " SELECT * FROM user WHERE user_id = "+user_id+" ";
+			Statement stm = connection.createStatement();
+			ResultSet rs = stm.executeQuery(sql);
+			if( rs.next() ){
+				userVO = SystemUtil.rs2UserVO(rs);
+			}
+			
+		} finally{
+			
+			DBUtil.release(connection);
+			return userVO;
+			
+		}
+	}
+	
+	
+	
+	
+	
+	public boolean isFollowById(int user_id, int follower_id) throws SQLException{
+		
+		Connection connection = DBUtil.getConnection(true);
+		boolean isFollow = false;
+		
+		try{
+			
+			String sql = " SELECT * FROM follow WHERE user_id = "+user_id+" AND follower_id = "+follower_id+" ";
+			Statement stm = connection.createStatement();
+			ResultSet rs = stm.executeQuery(sql);
+			isFollow = rs.next();
+			
+		} finally{
+			
+			DBUtil.release(connection);
+			return isFollow;
+		
+		}
+	}
+	
+	
+	
+	
+	
+	public JSONArray searchUserByName(String user_nickname, String user_name) throws SQLException{
+		
+		Connection connection = DBUtil.getConnection(true);
+		JSONArray userList = new JSONArray();
+		
+		try{
+			// 如果是模糊搜索
+			if( SystemUtil.isNone(user_name) ){
+				
+				String sql = " SELECT * FROM user WHERE user_nickname LIKE '%"+user_nickname+"%' ";
+				Statement stm = connection.createStatement();
+				ResultSet rs = stm.executeQuery(sql);
+				while( rs.next() ){
+					UserVO userVO = SystemUtil.rs2UserVO(rs);
+				    JSONObject userJS = userVO.toJsonObject();
+				    userList.put(userJS);
+				}
+				
+			}else{
+				
+				String sql = " SELECT * FROM user WHERE user_name = '"+user_name+"' ";
+				Statement stm = connection.createStatement();
+				ResultSet rs = stm.executeQuery(sql);
+				if( rs.next() ){
+					UserVO userVO = SystemUtil.rs2UserVO(rs);
+				    JSONObject userJS = userVO.toJsonObject();
+				    userList.put(userJS);
+				}
+				
+			}
+			
+		} finally{
+			
+			DBUtil.release(connection);
+			return userList;
+			
+		}
 	}
 
 }

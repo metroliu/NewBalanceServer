@@ -105,5 +105,31 @@
     <url-pattern>/servlet/GetFansListServlet</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+	<servlet-name>GetUserInfoServlet</servlet-name>
+	<servlet-class>com.newbalance.rickie.servlets.GetUserInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetUserInfoServlet</servlet-name>
+    <url-pattern>/servlet/GetUserInfoServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>IsFollowServlet</servlet-name>
+	<servlet-class>com.newbalance.rickie.servlets.IsFollowServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>IsFollowServlet</servlet-name>
+    <url-pattern>/servlet/IsFollowServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>SearchUserServlet</servlet-name>
+	<servlet-class>com.newbalance.rickie.servlets.SearchUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchUserServlet</servlet-name>
+    <url-pattern>/servlet/SearchUserServlet</url-pattern>
+  </servlet-mapping>
   
 </web-app>

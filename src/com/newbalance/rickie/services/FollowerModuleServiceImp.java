@@ -7,6 +7,7 @@ import org.json.JSONArray;
 import com.newbalance.rickie.dao.FollowerModuleDao;
 import com.newbalance.rickie.dao.FollowerModuleDaoImp;
 import com.newbalance.rickie.utils.Macro;
+import com.newbalance.rickie.vo.UserVO;
 
 public class FollowerModuleServiceImp implements FollowerModuleService {
 	
@@ -132,6 +133,73 @@ public class FollowerModuleServiceImp implements FollowerModuleService {
 		
 		return fansList;
 		
+	}
+	
+	
+	
+	
+	
+	public UserVO getUserInfo(int user_id){
+		
+		UserVO userVO = new UserVO();
+		
+		try{
+			
+			FollowerModuleDao dao = new FollowerModuleDaoImp();
+			userVO = dao.getUserInfoById(user_id);
+			
+		} catch( SQLException e ){
+			
+			throw new RuntimeException( Macro.CODE_SYSERROE );
+			
+		}
+		
+		return userVO;
+		
+	}
+	
+	
+	
+	
+	
+	public boolean isFollow(int user_id, int follower_id){
+		
+		boolean isFollow = false;
+		
+		try{
+			
+			FollowerModuleDao dao = new FollowerModuleDaoImp();
+			isFollow = dao.isFollowById(user_id, follower_id);
+			
+		} catch( SQLException e ){
+			
+			throw new RuntimeException( Macro.CODE_SYSERROE );
+			
+		}
+		
+		return isFollow;
+	}
+	
+	
+	
+	
+	
+	public JSONArray searchUser(String user_nickname, String user_name){
+		
+		JSONArray userList = new JSONArray();
+		
+		try{
+			
+			FollowerModuleDao dao = new FollowerModuleDaoImp();
+			userList = dao.searchUserByName(user_nickname, user_name);
+			
+		} catch( SQLException e ){
+			
+			throw new RuntimeException( Macro.CODE_SYSERROE );
+			
+		}
+		
+		return userList;
 	}
 
 }

@@ -30,7 +30,7 @@ public class SystemUtil {
 		
 		UserVO userVO = new UserVO();
 		
-		int user_id = Integer.valueOf( req.getParameter("user_id") );
+		int user_id = -1;
 		String user_avator = req.getParameter("user_avator");
 	    String user_name = req.getParameter("user_name");
 	    String user_nickname = req.getParameter("user_nickname");

@@ -30,5 +30,12 @@ public class Macro {
 	public static String CODE_FOLLOW_LIST_TRTURNED = "2130";
 	public static String CODE_GET_FANS_LIST = "2150";
 	public static String CODE_FANS_LIST_RETURNED = "2160";
+	public static String CODE_GET_USER_INFO = "2180";
+	public static String CODE_USER_INFO_RETURNED = "2190";
+	public static String CODE_WHETHER_FOLLOW_OR_NOT = "2210";
+	public static String CODE_ALREADY_FOLLOW = "2220";
+	public static String CODE_NOT_YET_FOLLOW = "2230";
+	public static String CODE_SEARCH_USER = "2240";
+	public static String CODE_USER_LIST_RETURNED = "2250";
 	
 }
