@@ -1,5 +1,7 @@
 package com.newbalance.rickie.utils;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,7 +30,7 @@ public class SystemUtil {
 		
 		UserVO userVO = new UserVO();
 		
-		int user_id = -1;
+		int user_id = Integer.valueOf( req.getParameter("user_id") );
 		String user_avator = req.getParameter("user_avator");
 	    String user_name = req.getParameter("user_name");
 	    String user_nickname = req.getParameter("user_nickname");
@@ -41,15 +43,15 @@ public class SystemUtil {
 		//Date timestamp = new Date("9999-99-99");
 	    
 	    // 输出到console调试
-	    System.out.println("user_avator="+user_avator+
-	    		",user_name="+user_name+
-	    		",user_nickname="+user_nickname+
-	    		",user_password="+user_password+
-	    		",user_sex="+user_sex+
-	    		",user_birthday="+user_birthday+
-	    		",user_city_id="+user_city_id+
-	    		",user_secu_question="+user_secu_question+
-	    		",user_secu_answer="+user_secu_answer);
+//	    System.out.println("user_avator="+user_avator+
+//	    		",user_name="+user_name+
+//	    		",user_nickname="+user_nickname+
+//	    		",user_password="+user_password+
+//	    		",user_sex="+user_sex+
+//	    		",user_birthday="+user_birthday+
+//	    		",user_city_id="+user_city_id+
+//	    		",user_secu_question="+user_secu_question+
+//	    		",user_secu_answer="+user_secu_answer);
 	    
 	    userVO.setUser_id(user_id);
 	    userVO.setUser_avator(user_avator);
@@ -66,5 +68,30 @@ public class SystemUtil {
 		return userVO;
 		
 	}
+	
+	
+	
+	/*
+	 * 将结果集中的user条目组装成userVO对象
+	 */
+	public static final UserVO rs2UserVO( ResultSet rs ) throws SQLException{
+		
+		UserVO userVO = new UserVO();
+		
+	    userVO.setUser_id(rs.getInt("user_id"));
+	    userVO.setUser_avator(rs.getString("user_avator"));
+	    userVO.setUser_name(rs.getString("user_name"));
+	    userVO.setUser_nickname(rs.getString("user_nickname"));
+	    userVO.setUser_password(rs.getString("user_password"));
+	    userVO.setUser_sex(rs.getInt("user_sex"));
+	    userVO.setUser_birthday(rs.getString("user_birthday"));
+	    userVO.setUser_city_id(rs.getInt("user_city_id"));
+	    userVO.setUser_secu_question(rs.getString("user_secu_question"));
+	    userVO.setUser_secu_answer(rs.getString("user_secu_answer"));
+	    userVO.setTimestamp(rs.getDate("timestamp"));
+	    
+	    return userVO;
+	}
+	
 
 }

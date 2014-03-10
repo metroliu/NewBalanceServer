@@ -22,5 +22,13 @@ public class Macro {
 	public static String CODE_FOLLOW_SUCCESS = "2020";
 	public static String CODE_CANCEL_FOLLOW = "2030";
 	public static String CODE_CANCEL_FOLLOW_SUCCESS = "2040";
+	public static String CODE_GET_FOLLOW_NUMBER = "2060";
+	public static String CODE_FOLLOW_NUMBER_RETURNED = "2070";
+	public static String CODE_GET_FANS_NUMBER = "2090";
+	public static String CODE_FANS_NUMBER_RETURNED = "2100";
+	public static String CODE_GET_FOLLOW_LIST = "2120";
+	public static String CODE_FOLLOW_LIST_TRTURNED = "2130";
+	public static String CODE_GET_FANS_LIST = "2150";
+	public static String CODE_FANS_LIST_RETURNED = "2160";
 	
 }

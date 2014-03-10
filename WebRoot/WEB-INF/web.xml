@@ -70,12 +70,39 @@
   </servlet-mapping>
   
   <servlet>
-	<servlet-name>GetFollowerNumServlet</servlet-name>
-	<servlet-class>com.newbalance.rickie.servlets.GetFollowerNumServlet</servlet-class>
+	<servlet-name>GetFollowNumServlet</servlet-name>
+	<servlet-class>com.newbalance.rickie.servlets.GetFollowNumServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>GetFollowerNumServlet</servlet-name>
-    <url-pattern>/servlet/GetFollowerNumServlet</url-pattern>
+    <servlet-name>GetFollowNumServlet</servlet-name>
+    <url-pattern>/servlet/GetFollowNumServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>GetFansNumServlet</servlet-name>
+	<servlet-class>com.newbalance.rickie.servlets.GetFansNumServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetFansNumServlet</servlet-name>
+    <url-pattern>/servlet/GetFansNumServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>GetFollowListServlet</servlet-name>
+	<servlet-class>com.newbalance.rickie.servlets.GetFollowListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetFollowListServlet</servlet-name>
+    <url-pattern>/servlet/GetFollowListServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>GetFansListServlet</servlet-name>
+	<servlet-class>com.newbalance.rickie.servlets.GetFansListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetFansListServlet</servlet-name>
+    <url-pattern>/servlet/GetFansListServlet</url-pattern>
   </servlet-mapping>
   
   

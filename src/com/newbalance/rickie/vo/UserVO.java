@@ -92,7 +92,7 @@ public class UserVO {
 	 * @return
 	 */
 	public JSONObject toJsonObject(){
-		JSONObject jsonObject=new JSONObject();
+		JSONObject jsonObject = new JSONObject();
 		
 		jsonObject.put("user_id", user_id);
 		jsonObject.put("user_avator", user_avator);
